@@ -1,0 +1,1 @@
+CompressString. Compress a string like aaaabbaccccc to a4b2a1c5 if compressed string is smaller than original string.
