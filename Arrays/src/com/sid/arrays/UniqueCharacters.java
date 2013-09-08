@@ -5,7 +5,12 @@ import java.util.Map;
 
 public class UniqueCharacters {
 	
-	boolean isUnique(char[] ch){
+	static boolean isUnique(String input){
+		if(input == null){
+			return false;
+		}
+		
+		char[] ch = input.toCharArray();
 		int len = ch.length;
 		Map<Character, Boolean> hm = new HashMap<Character, Boolean>();
 		
@@ -22,7 +27,6 @@ public class UniqueCharacters {
 	
 	
 	public static void main(String[] args){
-		UniqueCharacters uc = new UniqueCharacters();
 		String[] input = {
 				"abcdea",
 				"abc",
@@ -31,7 +35,7 @@ public class UniqueCharacters {
 				null
 		};
 		for(String in : input){
-			boolean result = uc.isUnique(in.toCharArray());
+			boolean result = UniqueCharacters.isUnique(in);
 			System.err.println(in+": "+result);	
 		}
 		
