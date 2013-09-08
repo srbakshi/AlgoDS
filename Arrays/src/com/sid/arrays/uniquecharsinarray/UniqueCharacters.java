@@ -1,11 +1,11 @@
-package com.sid.arrays;
+package com.sid.arrays.uniquecharsinarray;
 
 import java.util.HashMap;
 import java.util.Map;
 
 public class UniqueCharacters {
 	
-	static boolean isUnique(String input){
+	public static boolean isUnique(String input){
 		if(input == null){
 			return false;
 		}
@@ -23,22 +23,5 @@ public class UniqueCharacters {
 			}
 		}
 		return true;
-	}
-	
-	
-	public static void main(String[] args){
-		String[] input = {
-				"abcdea",
-				"abc",
-				"",
-				"a",
-				null
-		};
-		for(String in : input){
-			boolean result = UniqueCharacters.isUnique(in);
-			System.err.println(in+": "+result);	
-		}
-		
-		
 	}
 }
