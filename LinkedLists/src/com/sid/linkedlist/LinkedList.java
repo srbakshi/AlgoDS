@@ -3,6 +3,7 @@ package com.sid.linkedlist;
 public class LinkedList {
 
 	public Node head = null;
+	private boolean LOG = false;
 	
 	public LinkedList(int[] is) {
 		for(int i : is){
@@ -10,15 +11,18 @@ public class LinkedList {
 		}
 	}
 
+	public LinkedList() {
+	}
+
 	public void addAtHead(int data){
-		System.out.println("Adding at head: "+data);
+		syso("Adding at head: "+data);
 		Node tmp = new Node(data);
 		tmp.next = head;
 		head = tmp;
 	}
 	
 	public void addAtEnd(int data){
-		System.out.println("Adding at end: "+data);
+		syso("Adding at end: "+data);
 		if(head == null){
 			head = new Node(data);
 			return;
@@ -32,7 +36,7 @@ public class LinkedList {
 	}
 	
 	public void deleteNode(int d){
-		System.out.println("Removing all "+d+"s");
+		syso("Removing all "+d+"s");
 		Node l = head;
 		Node f = null;
 		
@@ -63,6 +67,12 @@ public class LinkedList {
 			t = t.next;
 		}
 		System.out.println();
+	}
+	
+	private void syso(String s){
+		if(LOG){
+			System.out.println(s);
+		}
 	}
 	
 	public class Node{
